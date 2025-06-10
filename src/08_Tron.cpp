@@ -15,7 +15,7 @@ sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Snake");
 
 bool gameOver = false;
 
-int redScore = 0;
+int greenScore = 0;
 int blueScore = 0;
 
 class Player
@@ -165,13 +165,13 @@ int main()
     gameOver = false;
     system("cls");
 
-    Player p1(sf::Color::Red, {WIDTH/4, HEIGHT/2});
+    Player p1(sf::Color::Green, {WIDTH/4, HEIGHT/2});
     Player p2(sf::Color::Blue, {WIDTH-WIDTH/4, HEIGHT/2});
 
     sf::Clock clock;
     float t = 0;
 
-    std::cout << "Red:  " << redScore  << '\n';
+    std::cout << "Green:  " << greenScore  << '\n';
     std::cout << "Blue: " << blueScore << '\n';
 
     while(window.isOpen())
@@ -179,7 +179,7 @@ int main()
         sf::Event e;
         while(window.pollEvent(e)){
             if(e.type == sf::Event::Closed) window.close();
-            if(gameOver && sf::Keyboard::isKeyPressed(sf::Keyboard::R)) main();
+            if(gameOver && sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) main();
         }
 
         sf::Time time = clock.restart();
@@ -192,7 +192,7 @@ int main()
             if(t>0.03){
                 t = 0;
                 p1.Update(p2, blueScore);
-                p2.Update(p1, redScore);
+                p2.Update(p1, greenScore);
             }
         }
 
