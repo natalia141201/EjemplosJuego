@@ -1,24 +1,18 @@
-# EjemplosJuego
+#   CabittSFML
 
-El proyecto esta desarrollado sobre MinGW64 utilizando Msys2
-y como editor se esta utilizando Visual Studio Code.
+Este proyecto es un juego simple desarrollado con MinGW64 usando MSYS2 y editado con Visual Studio Code.
 
-## Prerequisitos
+## Requisitos Previos
 
-[Instalar las herramientas necesarias](./docs/herramientas.md)
+Antes de poder ejecutar el juego, necesitas tener algunas herramientas y librerías instaladas:
 
-[Instalar las Extensiones VSCode](./docs/extensiones.md)
+Herramientas necesarias: Asegúrate de tener el entorno de desarrollo configurado.
+Extensiones de VSCode: Instala las extensiones recomendadas para trabajar con C++ en Visual Studio Code.
+Librerías: Descarga e instala las librerías necesarias para SFML.
+Clonar el repositorio: Obtén una copia del código del juego.
 
-[Instalar las librerias](./docs/librerias.md)
+## Como ejecutar el juego
 
-[Clonar el repositorio](./docs/fork.md)
+Una vez que tengas todos los requisitos previos instalados, abre una terminal en Visual Studio Code. Para ejecutar el juego Cabbit SFML, usa el siguiente comando:
 
-## Como ejecutar los ejemplos
-
-Instalar todas las dependencias descritas arriba y dentro de una terminal de vscode ejecutar:
-
-> make run'NombreEjecutable'
-
-Por ejemplo para ejecutar '00_Ventana.cpp' correr el comando en la terminal de vscode:
-
-> make run00_Ventana
+make runCabbit

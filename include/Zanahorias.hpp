@@ -17,12 +17,12 @@ public:
         sprite.setScale(0.1f, 0.1f);
     }
 
-    void move(float offsetX, float offsetY)
+    void mover(float offsetX, float offsetY)
     {
         sprite.move(offsetX, offsetY);
     }
 
-    void draw(sf::RenderWindow &window)
+    void dibujar(sf::RenderWindow &window)
     {
         window.draw(sprite);
     }

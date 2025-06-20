@@ -7,7 +7,7 @@ class Personaje
 public:
     Personaje(sf::Vector2f position)
     {
-        if (!texture.loadFromFile("assets/images/conejo.png"))
+        if (!texture.loadFromFile("assets/images/conejocafe.png"))
         {
             std::cerr << "No se pudo cargar la imagen del conejo\n";
         }
@@ -15,26 +15,26 @@ public:
         sprite.setPosition(position);
         vida = 5;
     }
-    int getVida() const  
+    int obtenerVida() const  
     {
         return vida;
     }
     void restarVida(int cantidad = 1) {
         vida -= cantidad;
     }
-    void move(float offsetX, float offsetY)
+    void mover(float offsetX, float offsetY)
     {
         sprite.move(offsetX, offsetY);
     }
-    void draw(sf::RenderWindow &window)
+    void dibujar(sf::RenderWindow &window)
     {
         window.draw(sprite);
     }
-    void update(){
+    void actualizar(){
         if (clock.getElapsedTime().asSeconds() >= frameTime)
         {
             currentFrame = (currentFrame + 1) % numFrames;
-            sprite.setTextureRect(sf::IntRect((currentFrame * 24)+50, 269, 75,  60));
+            sprite.setTextureRect(sf::IntRect((currentFrame * 24)+50, 269, 75, 69));
             clock.restart();
         }
     }
@@ -48,7 +48,7 @@ private:
     float frameTime = 0.1f;
     int currentFrame = 0;
     int numFrames = 4;
-    int frameWidth = 32;
-    int frameHeight = 32;
+    int frameWidth = 75;
+    int frameHeight = 29;
     int vida;
 };
