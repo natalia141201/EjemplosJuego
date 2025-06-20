@@ -117,7 +117,7 @@ public:
 
     void ChangeDir(bool useWASD)
     {
-        if(!useWASD)
+        if(!useWASD) 
         {
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && dir.y!=1)     dir = {0, -1};
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && dir.y!=-1)  dir = {0, 1};
@@ -147,7 +147,6 @@ public:
         AddTail();
         CheckBounds();
     }
-
     Player(sf::Color Color, sf::Vector2f Position)
     {
         sf::RectangleShape head;
