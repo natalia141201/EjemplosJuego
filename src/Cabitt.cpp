@@ -7,7 +7,7 @@
 #include "Zanahorias.hpp"
 #include "Calcetin.hpp"
 
-double velocidad = 2.3;
+double velocidad = 2.8;
 
 enum class EstadoJuego { Inicio, Jugando, GameOver };
 
@@ -102,8 +102,28 @@ int main()
         }
         else if (estado == EstadoJuego::Jugando) {
             ventana.draw(spriteFondo);
-            conejo.actualizar();
-            conejo.dibujar(ventana);
+
+     bool moviendo = false;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    conejo.mirarIzquierda();
+    conejo.mover(-velocidad, 0);
+    moviendo = true;
+}
+if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+    conejo.mirarDerecha();
+    conejo.mover(velocidad, 0);
+    moviendo = true;
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+        conejo.mover(0, -velocidad);
+        moviendo = true;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        conejo.mover(0, velocidad);
+        moviendo = true;
+    }
+    conejo.actualizar(moviendo);
+    conejo.dibujar(ventana);
 
             // Zanahorias
             for (auto& z : zanahoriasVec) {
@@ -155,14 +175,6 @@ int main()
             puntajeTexto.setFillColor(sf::Color::Yellow);
             puntajeTexto.setPosition(10, 50);
             ventana.draw(puntajeTexto);
-
-            // Movimiento del conejo
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-                conejo.mover(velocidad * -1, 0);
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-                conejo.mover(velocidad, 0);
-            }
 
             // Si la vida llega a 0, cambia el estado
             if (conejo.obtenerVida() <= 0) {

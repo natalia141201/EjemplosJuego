@@ -11,7 +11,7 @@ CPP_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 EXE_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.exe,$(CPP_FILES))
 
 # Regla para compilar cada archivo .cpp y generar el archivo .exe correspondiente
-$(BIN_DIR)/%.exe: $(SRC_DIR)/%.cpp
+$(BIN_DIR)/%.exe: $(SRC_DIR)/%.cpp include/*
 	g++ $< -o $@ $(SFML) -Iinclude
 
 # Regla por defecto para compilar todos los archivos .cpp

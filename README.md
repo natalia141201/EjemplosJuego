@@ -1,18 +1,34 @@
-#   CabittSFML
+# CabittSFML
 
-Este proyecto es un juego simple desarrollado con MinGW64 usando MSYS2 y editado con Visual Studio Code.
+CabittSFML es un juego simple desarrollado en C++ usando la librería [SFML](https://www.sfml-dev.org/) para gráficos, y editado con Visual Studio Code. Controla un conejo, recoge zanahorias y evita calcetines para sumar puntos y sobrevivir.
 
 ## Requisitos Previos
 
-Antes de poder ejecutar el juego, necesitas tener algunas herramientas y librerías instaladas:
+Antes de ejecutar el juego, asegúrate de tener instalado lo siguiente:
 
-Herramientas necesarias: Asegúrate de tener el entorno de desarrollo configurado.
-Extensiones de VSCode: Instala las extensiones recomendadas para trabajar con C++ en Visual Studio Code.
-Librerías: Descarga e instala las librerías necesarias para SFML.
-Clonar el repositorio: Obtén una copia del código del juego.
+- **MinGW64** y **MSYS2** (para compilar en Windows)
+- **Visual Studio Code** (editor recomendado)
+- **Extensiones de C++ para VSCode** (C/C++ de Microsoft)
+- **SFML** (descarga e instala la librería SFML para C++)
+- **make** (para usar el comando `make runCabbit`)
+- **Git** (opcional, para clonar el repositorio)
 
-## Como ejecutar el juego
+### Instalación
 
-Una vez que tengas todos los requisitos previos instalados, abre una terminal en Visual Studio Code. Para ejecutar el juego Cabbit SFML, usa el siguiente comando:
+1. Clona este repositorio o descarga el código fuente.
+2. Instala las dependencias mencionadas arriba.
+3. Asegúrate de que las imágenes y recursos estén en la carpeta `assets/images/` y las fuentes en `assets/fonts/`.
+
+### Como ejecutar el juego
+Abre una terminal en Visual Studio Code dentro del directorio del proyecto y ejecuta:
 
 make runCabbit
+
+Esto compilará y ejecutará el juego.
+
+#### Controles
+Flechas izquierda/derecha: Mover el conejo
+Espacio: Iniciar el juego
+R: Reiniciar tras Game Over
+
+[Descargar video de ejemplo](assets/Video/Demo.mp4)
